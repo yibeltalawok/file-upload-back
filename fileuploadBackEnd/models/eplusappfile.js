@@ -1,0 +1,36 @@
+// 'use strict';
+// const {
+//   Model
+// } = require('sequelize');
+// module.exports = (sequelize, DataTypes) => {
+//   class EplusappFile extends Model {
+//     /**
+//      * Helper method for defining associations.
+//      * This method is not a part of Sequelize lifecycle.
+//      * The `models/index` file will call this method automatically.
+//      */
+//     static associate(models) {
+//       // define association here
+//     }
+//   }
+//   EplusappFile.init({
+//     fileName: DataTypes.STRING,
+//     type: DataTypes.ENUM('audios','videos','files','images')
+//   }, {
+//     sequelize,
+//     modelName: 'EplusappFile',
+//   });
+//   return EplusappFile;
+// };
+
+module.exports = (sequelize, Sequelize) => {
+  const Eplusappfile = sequelize.define("eplusappfile", {
+    name: {
+      type: Sequelize.STRING 
+    },
+    type: {
+      type: Sequelize.STRING 
+    },
+  });  
+  return Eplusappfile;
+};
